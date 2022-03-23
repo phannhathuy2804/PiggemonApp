@@ -5,7 +5,7 @@ export enum piggemonType {
 }
 
 export abstract class Piggemon {
-    id?: number;
+    id: number = 0;
     name: string;
     height: number;
     weight: number;
@@ -58,20 +58,17 @@ export class Lean extends Piggemon {
 
 export class Potbelly extends Piggemon {
     pType: piggemonType;
-    fireAbility: number;
-    charmAbility: number;
+    electricAbility: number;
     overall: number;
     constructor(
         name: string,
         height: number,
         weight: number,
-        fireAbility: number,
-        charmAbility: number
+        electricAbility: number
     ) {
         super(name, height, weight);
         this.pType = piggemonType.potbelly;
-        this.fireAbility = fireAbility;
-        this.charmAbility = charmAbility;
-        this.overall = (height + weight + fireAbility + charmAbility) / 4;
+        this.electricAbility = electricAbility;
+        this.overall = (height + weight + electricAbility) / 3;
     }
 }

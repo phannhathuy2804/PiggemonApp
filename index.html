@@ -3,6 +3,35 @@
     <head>
         <title>Assignment 4</title>
         <meta charset="utf-8" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        />
     </head>
-    <body></body>
+    <body>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.47/system.js"
+            integrity="sha512-mkBpeD76fJnxFHGZstCL0mPCW6E3RFtUzfp5Ye8oQg2rxQNHy4BgHsbmvSizsq3fgF4PGozPI1BzGCB/h1Yq5g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            System.defaultJSExtensions = true;
+            System.import("main");
+        </script>
+        <section class="piggemon list">
+            <h1>Piggemon List</h1>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+            </table>
+            <button onclick="window.location.href='./add.html'">Add</button>
+        </section>
+    </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Piggemon Page</title>
+        <meta charset="utf-8" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.47/system.js"
+            integrity="sha512-mkBpeD76fJnxFHGZstCL0mPCW6E3RFtUzfp5Ye8oQg2rxQNHy4BgHsbmvSizsq3fgF4PGozPI1BzGCB/h1Yq5g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            System.defaultJSExtensions = true;
+            System.import("main");
+        </script>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <section id="Adding Piggemon">
+            <h1>Add new:</h1>
+            <table class="table table-bordered">
+                <tbody id="table-body">
+                    <tr>
+                        <th scope="row"><b>Name</b></th>
+                        <th><input type="text" name="pName" id="pName" /></th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><b>Height</b></th>
+                        <th>
+                            <input type="number" name="pHeight" id="pHeight" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><b>Weight</b></th>
+                        <th>
+                            <input type="number" name="pWeight" id="pWeight" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><b>Type</b></th>
+                        <th>
+                            <form>
+                                <select
+                                    class="form-select form-select-lg"
+                                    name="pType"
+                                    id="pType"
+                                >
+                                    <option value="" disabled selected>
+                                        Select your option
+                                    </option>
+
+                                    <option value="0" id="type-yorkshire">
+                                        Yorkshire
+                                    </option>
+                                    <option value="1" id="type-lean">
+                                        Lean
+                                    </option>
+                                    <option value="2" id="type-pottbelly">
+                                        Pottbelly
+                                    </option>
+                                </select>
+                            </form>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" id="add-btn">
+                Add
+            </button>
+        </section>
+    </body>
+</html>

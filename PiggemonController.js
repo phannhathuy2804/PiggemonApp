@@ -11,28 +11,49 @@ System.register([], function (exports_1, context_1) {
                     this.retrieveAllPigs();
                 }
                 addPig(p) {
-                    p.id = PiggemonServices.currentID;
-                    PiggemonServices.currentID++;
                     this.piggemonList.push(p);
                     localStorage.setItem(p.id.toString(), JSON.stringify(p));
                     window.alert("Successfully added a new Piggemon!");
+                    console.log("current Id" + PiggemonServices.currentID);
                 }
                 getPig(id) {
-                    return this.piggemonList[id];
+                    let stringID = id.toString();
+                    console.log("string key: " + stringID);
+                    let pig;
+                    let stringValue = localStorage.getItem(stringID);
+                    console.log("string value: " + stringValue);
+                    if (stringValue != null) {
+                        pig = JSON.parse(stringValue);
+                        return pig;
+                    }
+                    return null;
                 }
-                deletePig(p) {
-                    this.piggemonList.splice(p.id, 1);
-                    localStorage.removeItem(p.id.toString());
+                deletePig(pid) {
+                    this.piggemonList.splice(pid, 1);
+                    console.log("Removing" + pid);
+                    localStorage.removeItem(pid.toString());
                 }
                 retrieveAllPigs() {
-                    PiggemonServices.currentID = localStorage.length;
-                    console.log(PiggemonServices.currentID);
+                    let Arr = [];
                     for (let i = 0; i < localStorage.length; i++) {
                         let key = localStorage.key(i);
                         if (key != null) {
-                            var value = JSON.parse(localStorage[key]);
-                            console.log(value);
-                            console.log(typeof value);
+                            Arr.push(parseInt(key));
+                        }
+                    }
+                    let maxID;
+                    maxID = Math.max.apply(null, Arr);
+                    if (localStorage.length == 0) {
+                        maxID = 0;
+                    }
+                    if (maxID != null) {
+                        PiggemonServices.currentID = maxID + 1;
+                        console.log(PiggemonServices.currentID);
+                        for (let i = 0; i < localStorage.length; i++) {
+                            let key = localStorage.key(i);
+                            if (key != null) {
+                                var value = JSON.parse(localStorage[key]);
+                            }
                         }
                     }
                 }

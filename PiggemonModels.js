@@ -12,8 +12,9 @@ System.register([], function (exports_1, context_1) {
             })(piggemonType || (piggemonType = {}));
             exports_1("piggemonType", piggemonType);
             Piggemon = class Piggemon {
-                constructor(name, height, weight) {
+                constructor(id, name, height, weight) {
                     this.id = 0;
+                    this.id = id;
                     this.name = name;
                     this.height = height;
                     this.weight = weight;
@@ -21,31 +22,31 @@ System.register([], function (exports_1, context_1) {
             };
             exports_1("Piggemon", Piggemon);
             Yorkshire = class Yorkshire extends Piggemon {
-                constructor(name, height, weight, waterAbility, iceAbility) {
-                    super(name, height, weight);
+                constructor(id, name, height, weight, ability1, ability2) {
+                    super(id, name, height, weight);
                     this.pType = piggemonType.yorkshire;
-                    this.waterAbility = waterAbility;
-                    this.iceAbility = iceAbility;
-                    this.overall = (height + weight + waterAbility + iceAbility) / 4;
+                    this.ability1 = ability1;
+                    this.ability2 = ability2;
+                    this.overall = (height + weight + ability1 + ability2) / 4;
                 }
             };
             exports_1("Yorkshire", Yorkshire);
             Lean = class Lean extends Piggemon {
-                constructor(name, height, weight, fireAbility, charmAbility) {
-                    super(name, height, weight);
+                constructor(id, name, height, weight, ability1, ability2) {
+                    super(id, name, height, weight);
                     this.pType = piggemonType.lean;
-                    this.fireAbility = fireAbility;
-                    this.charmAbility = charmAbility;
-                    this.overall = (height + weight + fireAbility + charmAbility) / 4;
+                    this.ability1 = ability1;
+                    this.ability2 = ability2;
+                    this.overall = (height + weight + ability1 + ability2) / 4;
                 }
             };
             exports_1("Lean", Lean);
             Potbelly = class Potbelly extends Piggemon {
-                constructor(name, height, weight, electricAbility) {
-                    super(name, height, weight);
+                constructor(id, name, height, weight, ability1) {
+                    super(id, name, height, weight);
                     this.pType = piggemonType.potbelly;
-                    this.electricAbility = electricAbility;
-                    this.overall = (height + weight + electricAbility) / 3;
+                    this.ability1 = ability1;
+                    this.overall = (height + weight + ability1) / 3;
                 }
             };
             exports_1("Potbelly", Potbelly);

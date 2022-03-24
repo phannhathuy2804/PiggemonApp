@@ -9,7 +9,8 @@ export abstract class Piggemon {
     name: string;
     height: number;
     weight: number;
-    constructor(name: string, height: number, weight: number) {
+    constructor(id: number, name: string, height: number, weight: number) {
+        this.id = id;
         this.name = name;
         this.height = height;
         this.weight = weight;
@@ -18,57 +19,60 @@ export abstract class Piggemon {
 
 export class Yorkshire extends Piggemon {
     pType: piggemonType;
-    waterAbility: number;
-    iceAbility: number;
+    ability1: number;
+    ability2: number;
     overall: number;
     constructor(
+        id: number,
         name: string,
         height: number,
         weight: number,
-        waterAbility: number,
-        iceAbility: number
+        ability1: number,
+        ability2: number
     ) {
-        super(name, height, weight);
+        super(id, name, height, weight);
         this.pType = piggemonType.yorkshire;
-        this.waterAbility = waterAbility;
-        this.iceAbility = iceAbility;
-        this.overall = (height + weight + waterAbility + iceAbility) / 4;
+        this.ability1 = ability1;
+        this.ability2 = ability2;
+        this.overall = (height + weight + ability1 + ability2) / 4;
     }
 }
 
 export class Lean extends Piggemon {
     pType: piggemonType;
-    fireAbility: number;
-    charmAbility: number;
+    ability1: number;
+    ability2: number;
     overall: number;
     constructor(
+        id: number,
         name: string,
         height: number,
         weight: number,
-        fireAbility: number,
-        charmAbility: number
+        ability1: number,
+        ability2: number
     ) {
-        super(name, height, weight);
+        super(id, name, height, weight);
         this.pType = piggemonType.lean;
-        this.fireAbility = fireAbility;
-        this.charmAbility = charmAbility;
-        this.overall = (height + weight + fireAbility + charmAbility) / 4;
+        this.ability1 = ability1;
+        this.ability2 = ability2;
+        this.overall = (height + weight + ability1 + ability2) / 4;
     }
 }
 
 export class Potbelly extends Piggemon {
     pType: piggemonType;
-    electricAbility: number;
+    ability1: number;
     overall: number;
     constructor(
+        id: number,
         name: string,
         height: number,
         weight: number,
-        electricAbility: number
+        ability1: number
     ) {
-        super(name, height, weight);
+        super(id, name, height, weight);
         this.pType = piggemonType.potbelly;
-        this.electricAbility = electricAbility;
-        this.overall = (height + weight + electricAbility) / 3;
+        this.ability1 = ability1;
+        this.overall = (height + weight + ability1) / 3;
     }
 }

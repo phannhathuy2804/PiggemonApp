@@ -7,8 +7,6 @@
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
         />
-    </head>
-    <body>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.47/system.js"
             integrity="sha512-mkBpeD76fJnxFHGZstCL0mPCW6E3RFtUzfp5Ye8oQg2rxQNHy4BgHsbmvSizsq3fgF4PGozPI1BzGCB/h1Yq5g=="
@@ -19,6 +17,8 @@
             System.defaultJSExtensions = true;
             System.import("main");
         </script>
+    </head>
+    <body id="main-body">
         <section class="piggemon list">
             <h1>Piggemon List</h1>
             <table class="table table-bordered">
@@ -30,6 +30,7 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
+                <tbody id="main-table-body"></tbody>
             </table>
             <button onclick="window.location.href='./add.html'">Add</button>
         </section>
